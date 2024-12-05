@@ -50,50 +50,51 @@ OU-#ROOT#\Tier 0\Computers\PAW,Priviliged Access Workstations and jumpboxes for 
 OU-#ROOT#\Tier 0\Groups
 ACL-PermADT0GroupsOU,CreateDeleteManageGroupObjects,Delegate access to manage T0 groups
 OU-#ROOT#\Tier 0\Groups\Permission Groups,These groups grant access
-Group-PermADT0ComputersOU,Members can manage objects in T0 computer OUs
-Group-PermADT0ComputersGPOs,Members can manage OUs linked to T0 computers OU
-Group-PermADT0ComputerLocalAdmin,Members are local admins on T0 machines
-Group-PermADT0ComputerServerOperator,Members are server operators on T0 machines
-Group-PermADT0GroupsOU,Members can manage T0 security groups
-Group-PermADT0AccountsOU,Members can manage T0 accounts
-Group-PermADT0AdminsOU,Members can manage T0 admin accounts
-Group-PermADT1ComputersOU,Members can manage T1 computer OUs
-Group-PermADT1ComputersGPOs,Members can manage GPOs linked to T1 OUs
-Group-PermADT1ComputersLocalAdmin,Members are local admin on T1 computers
-Group-PermADT1GroupsOU,Members can manage T1 security groups
-Group-PermADT1AccountsOU,Members can manage T1 accounts
-Group-PermADT1AdminsOU,Managers can manage T1 admins
-Group-PermADT2ComputersOU,Members can manage object in T2 computer OUs
-Group-PermADT2ComputersGPOs,Members can manage GPOs linked to T2 OUs
-Group-PermADT2ComputersLocalAdmin,Members are local admin on T2 computers
-Group-PermADT2GroupsOU,Members can manage T2 security groups
-Group-PermADT2AdminsOU,Members can manage T2 admin accounts
-Group-PermADT2AccountsOU,Members can manage T2 accounts
-Group-TempPermADT2Accounts,Members can temporarily manage T2 accounts until group emptied nightly
+LocalGroup-PermADT0ComputersOU,Members can manage objects in T0 computer OUs
+LocalGroup-PermADT0ComputersGPOs,Members can manage OUs linked to T0 computers OU
+LocalGroup-PermADT0ComputerLocalAdmin,Members are local admins on T0 machines
+LocalGroup-PermADT0ComputerServerOperator,Members are server operators on T0 machines
+LocalGroup-PermADT0GroupsOU,Members can manage T0 security groups
+LocalGroup-PermADT0AccountsOU,Members can manage T0 accounts
+LocalGroup-PermADT0AdminsOU,Members can manage T0 admin accounts
+LocalGroup-PermADT1ComputersOU,Members can manage T1 computer OUs
+LocalGroup-PermADT1ComputersGPOs,Members can manage GPOs linked to T1 OUs
+LocalGroup-PermADT1ComputersLocalAdmin,Members are local admin on T1 computers
+LocalGroup-PermADT1GroupsOU,Members can manage T1 security groups
+LocalGroup-PermADT1AccountsOU,Members can manage T1 accounts
+LocalGroup-PermADT1AdminsOU,Managers can manage T1 admins
+LocalGroup-PermADT2ComputersOU,Members can manage object in T2 computer OUs
+LocalGroup-PermADT2ComputersGPOs,Members can manage GPOs linked to T2 OUs
+LocalGroup-PermADT2ComputersLocalAdmin,Members are local admin on T2 computers
+LocalGroup-PermADT2GroupsOU,Members can manage T2 security groups
+LocalGroup-PermADT2AdminsOU,Members can manage T2 admin accounts
+LocalGroup-PermADT2AccountsOU,Members can manage T2 accounts
+LocalGroup-TempPermADT2Accounts,Members can temporarily manage T2 accounts until group emptied nightly
 OU-#ROOT#\Tier 0\Groups\Permission Groups\Time Based Access,These groups are automatically emptied
-Group-TempPermDomainAdmins,Members are temporarily domain admin until group emptied every night
+LocalGroup-TempPermDomainAdmins,Members are temporarily domain admin until group emptied every night
 OU-#ROOT#\Tier 0\Groups\Role Groups,These groups describe job roles and task. Roles give one or more permission groups. T0 accounts/computers only
-Group-RoleT0InfraAdmins,Infra team ADM accounts
+Group-RoleT0InfraAdmins,Infra team admin (ADM) accounts
+Group-RoleT0IAMProductConnectors,IAM product service accounts for T0 access
 AssignRolePermission-RoleT0InfraAdmins,PermADT0ComputersOU
 AssignRolePermission-RoleT0InfraAdmins,PermADT0AccountsOU
 AssignRolePermission-RoleT0InfraAdmins,PermADT0groupsOU
 AssignRolePermission-RoleT0InfraAdmins,PermADT1ComputersOU
 AssignRolePermission-RoleT0InfraAdmins,PermADT1AccountsOU
 AssignRolePermission-RoleT0InfraAdmins,PermADT1AdminsOU
-AssignRolePermission-RoleT0InfraAdmins,PermADT1groupsOU
+AssignRolePermission-RoleT0InfraAdmins,RoleT0IAMProductConnectors
 AssignRolePermission-RoleT0InfraAdmins,PermADT2ComputersOU
 AssignRolePermission-RoleT0InfraAdmins,PermADT2AccountsOU
 AssignRolePermission-RoleT0InfraAdmins,PermADT2AdminsOU
 AssignRolePermission-RoleT0InfraAdmins,PermADT2groupsOU
-AssignRolePermission-RoleT0SavyintConnectors,Pre-Windows 2000 Compatible Access
-AssignRolePermission-RoleT0SavyintConnectors,PermADT0AccountsOU
-AssignRolePermission-RoleT0SavyintConnectors,PermADT0groupsOU
-AssignRolePermission-RoleT0SavyintConnectors,PermADT1AccountsOU
-AssignRolePermission-RoleT0SavyintConnectors,PermADT1AdminsOU
-AssignRolePermission-RoleT0SavyintConnectors,PermADT1groupsOU
-AssignRolePermission-RoleT0SavyintConnectors,PermADT2AccountsOU
-AssignRolePermission-RoleT0SavyintConnectors,PermADT2AdminsOU
-AssignRolePermission-RoleT0SavyintConnectors,PermADT2groupsOU
+AssignRolePermission-RoleT0IAMProductConnectors,Pre-Windows 2000 Compatible Access
+AssignRolePermission-RoleT0IAMProductConnectors,PermADT0AccountsOU
+AssignRolePermission-RoleT0IAMProductConnectors,PermADT0groupsOU
+AssignRolePermission-RoleT0IAMProductConnectors,PermADT1AccountsOU
+AssignRolePermission-RoleT0IAMProductConnectors,PermADT1AdminsOU
+AssignRolePermission-RoleT0IAMProductConnectors,PermADT1groupsOU
+AssignRolePermission-RoleT0IAMProductConnectors,PermADT2AccountsOU
+AssignRolePermission-RoleT0IAMProductConnectors,PermADT2AdminsOU
+AssignRolePermission-RoleT0IAMProductConnectors,PermADT2groupsOU
 OU-#ROOT#\Tier 0\Entra Managed,Cloud objects managed in Entra ID
 OU-#ROOT#\Tier 0\Admins,T0 admininistrators inc _da accounts
 ACL-PermADT0AdminsOU,CreateDeleteManageUserObjects,Delegate create and change access to user objects
@@ -109,31 +110,31 @@ ACL-PermADT1ComputersOU,CreateDeleteManageComputerObjects,Domain join and manage
 OU-#ROOT#\Tier 1\Computers\PAW,Priv Access Workstations used by T1 admins
 OU-#ROOT#\Tier 1\Groups
 ACL-PermADT1GroupsOU,CreateDeleteManageGroupObjects,Delegate create and change access to groups
-OU-#ROOT#\Tier 1\Groups\Permission Groups,t0,t1 accounts/roles/computers onlt
-Group-PermADT2ComputersLocalAdmin,Members are local admin on T2 computers
-Group-PermApp1Admins,Members are admins on app 1
-Group-PermApp2Admins,Members are admins on app 2
-Group-PermApp1DB_SYSAdmin,Members are DBAs on App1
-Group-PermSaaS1Admins,Members are SaaS app 1 admins
-Group-PermSaaS2Admins,Members are SaaS app 2 admins
-Group-PermFilesChocoRepoT1_RO,\\dfs path here
-Group-PermFilesChocoRepoT1_RW,\\dfs path here
-Group-PermFilesDeptC,\\dfs path here
+OU-#ROOT#\Tier 1\Groups\Permission Groups,t0,t1 accounts/roles/computers only
+LocalGroup-PermADT2ComputersLocalAdmin,Members are local admin on T2 computers
+LocalGroup-PermApp1Admins,Members are admins on app 1
+LocalGroup-PermApp2Admins,Members are admins on app 2
+LocalGroup-PermApp1DB_SYSAdmin,Members are DBAs on App1
+LocalGroup-PermSaaS1Admins,Members are SaaS app 1 admins
+LocalGroup-PermSaaS2Admins,Members are SaaS app 2 admins
+LocalGroup-PermFilesChocoRepoT1_RO,\\dfs path here
+LocalGroup-PermFilesChocoRepoT1_RW,\\dfs path here
+LocalGroup-PermFilesDeptC,\\dfs path here
 OU-#ROOT#\Tier 1\Groups\Permission Groups\Time Based Access,These groups are automatically emptied
 OU-#ROOT#\Tier 1\Groups\Role Groups,These groups describe job roles and task. Roles give one or more permission groups. T0 and T1 accounts/computers only
 Group-RoleT1AdminInfoSecApps,Infosec team admin accounts for permissions in infosec apps
 Group-RoleT1AdminBusinessApps,Business apps team admin accounts for permissions in business apps
 Group-RoleT1ITServerSupportAdmins,Server support team admin accounts for permissions to infra services
 Group-RoleT1DomainJoiners,Automation accounts that add computers to domain at T1 level and below (MDT and VDI)
-AssignRolePermission-RoleT1BAUAdmins,PermADT1ComputersOU
-AssignRolePermission-RoleT1BAUAdmins,PermADT1AccountsOU
-AssignRolePermission-RoleT1BAUAdmins,PermADT1AdminsOU
-AssignRolePermission-RoleT1BAUAdmins,PermADT1groupsOU
-AssignRolePermission-RoleT1BAUAdmins,PermADT2ComputersOU
-AssignRolePermission-RoleT1BAUAdmins,PermADT2AccountsOU
-AssignRolePermission-RoleT1BAUAdmins,PermADT2AdminsOU
-AssignRolePermission-RoleT1BAUAdmins,PermADT2groupsOU
-AssignRolePermission-RoleT1BAUAdmins,PermFilesChocoRepoT1_RW
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermADT1ComputersOU
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermADT1AccountsOU
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermADT1AdminsOU
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermADT1groupsOU
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermADT2ComputersOU
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermADT2AccountsOU
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermADT2AdminsOU
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermADT2groupsOU
+AssignRolePermission-RoleT1ITServerSupportAdmins,PermFilesChocoRepoT1_RW
 AssignRolePermission-Domain Users,PermFilesChocoRepoT1_RO
 AssignRolePermission-Domain Computers,PermFilesChocoRepoT1_RO
 AssignRolePermission-RoleT1DomainJoiners,PermADT1ComputersOU
@@ -154,30 +155,32 @@ OU-#ROOT#\Tier 2,Tier two zone
 OU-#ROOT#\Tier 2\Computers,User desktops
 ACL-PermADT2ComputersOU,CreateDeleteManageComputerObjects,Domain join and managed computer objects
 OU-#ROOT#\Tier 2\Computers\MultisessionHosts
-OU-#ROOT#\Tier 2\Computers\Win10,Default location for new Win10 machines. Policy applied at this level
-OU-#ROOT#\Tier 2\Computers\Win10\US,Regional settings locale
+OU-#ROOT#\Tier 2\Computers\Win10,Default location for new Win10 machines. Policy applied at this level.
+OU-#ROOT#\Tier 2\Computers\Win10\US,Machines with US policies
 OU-#ROOT#\Tier 2\Computers\Win10\US\NewYork,Timezone and printers applied at this level
 OU-#ROOT#\Tier 2\Computers\Win10\US\Miami
-OU-#ROOT#\Tier 2\Computers\Win10\UK
+OU-#ROOT#\Tier 2\Computers\Win10\UK,Machines with UK policies
 OU-#ROOT#\Tier 2\Computers\Win10\UK\Northampton
 OU-#ROOT#\Tier 2\Computers\Win10\UK\Luton
 OU-#ROOT#\Tier 2\Computers\Win10\UK\Slough
-OU-#ROOT#\Tier 2\Computers\Win10\FR
+OU-#ROOT#\Tier 2\Computers\Win10\FR,Les machines avec les policies francais
 OU-#ROOT#\Tier 2\Computers\Win10\FR\LesGets
 OU-#ROOT#\Tier 2\Computers\Win10\FR\Meribel
+OU-#ROOT#\Tier 2\Computers\Win10\CH,The machines with Swiss policies
 OU-#ROOT#\Tier 2\Computers\Win10\CH\Verbier
+OU-#ROOT#\Tier 2\Computers\Win10\AT,The machines with Austrian policies
 OU-#ROOT#\Tier 2\Computers\Win10\AT\Mooserwirt
 OU-#ROOT#\Tier 2\Groups
 ACL-PermADT2GroupsOU,CreateDeleteManageGroupObjects,Delegate create and change access to group objects
 OU-#ROOT#\Tier 2\Groups\Permission Groups,These groups grant access to end user resources such as project shares
-Group-PermFiles_ProjectA_RW,\\some dfs path
-Group-PermFiles_ProjectB_RW,\\some dfs path
-Group-PermFilesDeptC_RW,\\some dfs path
-Group-PermFilesChocoRepoT2_RO,\\some dfs path
-Group-PermFilesChocoRepoT2_RW,\\some dfs path
-Group-PermSaas1,URL
-Group-PermSaaS2,URL
-Group-PermDesktopAppE,software package reference here
+LocalGroup-PermFiles_ProjectA_RW,\\some dfs path
+LocalGroup-PermFiles_ProjectB_RW,\\some dfs path
+LocalGroup-PermFilesDeptC_RW,\\some dfs path
+LocalGroup-PermFilesChocoRepoT2_RO,\\some dfs path
+LocalGroup-PermFilesChocoRepoT2_RW,\\some dfs path
+LocalGroup-PermSaas1,URL
+LocalGroup-PermSaaS2,URL
+LocalGroup-PermDesktopAppE,software package reference here
 OU-#ROOT#\Tier 2\Groups\Permission Groups\Synced to Entra,User resources in Entra typically use Entra managed groups instead. AD T2 groups for AD authorised resources only
 OU-#ROOT#\Tier 2\Groups\Permission Groups\Time Based Access,These groups are automatically emptied
 OU-#ROOT#\Tier 2\Groups\Role Groups,These groups describe job roles and tasks. Roles give one or more permission groups. T2 accounts/computers only
@@ -249,14 +252,15 @@ function new-GroupIfNotExist {
         [Parameter(Mandatory, ValueFromPipeline = $True, ValueFromPipelineByPropertyName = $True)]
         [ValidateNotNullOrEmpty()]
         [string]$OUPath,
-        [string]$Description=$null
+        [string]$Description=$null,
+        [string]$groupType="global"
     )
     if(Get-ADGroup -filter {Name -eq $groupName} -ErrorAction Continue)
         {
             return Get-ADGroup -filter {Name -eq $groupName}
         } else
         {
-            $ADGroup=New-ADGroup -Name $groupName -GroupScope Global -GroupCategory Security -Path $ouPath -Description $Description
+            $ADGroup=New-ADGroup -Name $groupName -GroupScope $groupType -GroupCategory Security -Path $ouPath -Description $Description
             if ($description) {$ADGroup | set-adgroup -Description $Description}
             return $ADGroup
         }
@@ -392,6 +396,7 @@ function set-OUACL{
     else
     {
         Write-Warning "Failed to apply ACL until $securityGroupName exists"
+    }
 }
 
 
@@ -425,7 +430,7 @@ foreach ($TAMLine in $TAMStructure.Split([Environment]::NewLine, [StringSplitOpt
         $currentOU=new-OUIfNotExist -OUName $ouName -OUPath $OUpath -Description $OUDescription
         #Write-Output "`tCompleted $ouName at $ouPath"
     }
-
+    # global Groups for roles
     if ($TAMLine -ilike "Group-*"){
         $TAMLine=$TAMLine -replace "Group-",'' # trim header
         $currentOU=new-OUIfNotExist -OUName $ouName -OUPath $OUpath
@@ -437,9 +442,24 @@ foreach ($TAMLine in $TAMStructure.Split([Environment]::NewLine, [StringSplitOpt
         else
         {
             new-GroupIfNotExist -groupName $TAMLine -OUPath $currentOU | out-null
-            #if ($description) {$ADGroup | set-adgroup -Description $Description}
         }
     }
+
+    # domain local groups (for permissions to resourcs in this domain)
+    if ($TAMLine -ilike "LocalGroup-*"){
+        $TAMLine=$TAMLine -replace "LocalGroup-",'' # trim header
+        $currentOU=new-OUIfNotExist -OUName $ouName -OUPath $OUpath
+        #New-ADGroup -Name $TAMLine -Path $currentOU -GroupScope Global -GroupCategory Security -ErrorAction SilentlyContinue
+        #Write-Warning "New group $TAMLine at $currentOU"
+        if ($TAMLine -like '*,*'){
+            new-GroupIfNotExist -groupName $TAMLine.Split(',')[0] -groupType 'DomainLocal' -OUPath $currentOU -Description $TAMLine.Split(',')[1] | Out-Null
+            }
+        else
+        {
+            new-GroupIfNotExist -groupName $TAMLine -OUPath $currentOU -groupType 'DomainLocal' | out-null
+        }
+    }
+
     # Set ACLs (skip if group doesn't exist yet)
     if ($TAMLine -ilike "ACL-*"){
         $TAMLine=$TAMLine -replace "ACL-",'' # trim header
