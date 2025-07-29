@@ -1,0 +1,10 @@
+# Ignore macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore macOS folder attributes
+__MACOSX/
+
+# Ignore log files
+*.log

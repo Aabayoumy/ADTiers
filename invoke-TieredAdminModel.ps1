@@ -2,6 +2,12 @@
 Set-StrictMode -Version latest
 $ErrorActionPreference = "Stop"
 
+# Start logging
+$scriptPath = $MyInvocation.MyCommand.Path
+$scriptName = [System.IO.Path]::GetFileNameWithoutExtension($scriptPath)
+$logFile = "$scriptPath\..\$scriptName-$(Get-Date -f yyyy-MM-dd-HH-mm-ss).log"
+Start-Transcript -Path $logFile
+
 # Why not....
 $Banner=@'
 Active Directory
@@ -12,7 +18,7 @@ Active Directory
    |_| |_|\___|_|  |___/  \___/|_|    _/ |\___/ \__, |
                                      |__/       |___/ 
                 Yet another Tiered Admin Model script...
-                https://github.com/alexmags/ADTiersOfJoy
+    Forked from https://github.com/alexmags/ADTiersOfJoy
 '@
 write-output $banner
 
@@ -26,7 +32,7 @@ Import-Module ActiveDirectory  # assumes remote server admin tools RSAT installe
 
 # Assuming you're signed into AD domain, OUs will be relative to this domain
 $domainDN="$((get-addomain).DistinguishedName)" 
-$rootOU='Corp'  # This will be top level OU.  It's generic to survive company rename/rebranding. Leaves space for parallel OUs for company mergers/aquisitions/divestitures.
+$rootOU='Admin'  # This will be top level OU.  It's generic to survive company rename/rebranding. Leaves space for parallel OUs for company mergers/aquisitions/divestitures.
 
 <# Define tiered admin model OUs, groups and group nesting and OU ACLs. This could be a separte data file.
     
@@ -489,3 +495,4 @@ foreach ($TAMLine in $TAMStructure.Split([Environment]::NewLine, [StringSplitOpt
     }
 }
 
+Stop-Transcript
